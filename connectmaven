@@ -1,0 +1,42 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.democonn;
+import java.sql.*;
+/**
+ *
+ * @author ADMIN
+ */
+public class Democonn {
+
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String url = "jdbc:sqlserver://localhost:1433 ; databaseName=Bai1;encrypt=true;trustServerCertificate=true;";
+        String user = "sa";
+        String pass = "2004";
+        Connection connect = DriverManager.getConnection(url, user, pass);
+
+        if(connect != null) {
+            System.out.println("succes");
+        }
+        else {
+            System.out.println("error");
+        }
+        
+//        connect.close();
+
+    }
+}
+
+// file prom.xml
+<dependencies>
+// search ms jdbc drivers for sqlserver maven thay phien ban moi vao day
+        <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>12.8.1.jre11</version>
+        </dependency>
+
+    </dependencies>
