@@ -1,0 +1,30 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+import java.sql.*;
+/**
+ *
+ * @author ADMIN
+ */
+public class NewClass {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String url = "jdbc:sqlserver://localhost:1433 ; databaseName=Bai1";
+        String user = "sa";
+        String pass = "2004";
+        Connection connect = DriverManager.getConnection(url, user, pass);
+
+        if(connect != null) {
+            System.out.println("succes");
+        }
+        else {
+            System.out.println("error");
+        }
+        
+//        connect.close();
+
+    }
+}
+
+// jdbc tren mega hoac zalo
